@@ -1,0 +1,170 @@
+* {
+    font-family: sans-serif;
+}
+
+/******************************************************************************
+ * LAYOUT
+ ******************************************************************************
+ */
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 1em;
+    flex-shrink: 0;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#latent,
+#decoded {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+#latent b,
+#decoded b {
+    margin-bottom: .4rem;
+    text-align: center;
+}
+
+#latent {
+    width: 50%;
+    max-height: 80vh;
+}
+
+#decoded {
+    width: 100%;
+    max-height: 80vh;
+}
+
+#latent-wrapper {
+    position: relative;
+    max-width: 100%;
+    max-height: 50vh;
+    aspect-ratio: 1/1;
+    text-align: center;
+}
+
+#latent-canvas {
+    height: 100%;
+}
+
+#decoded-wrapper {
+    max-width: 100%;
+    aspect-ratio: 1/1;
+    text-align: center;
+}
+
+#decoded-canvas {
+    height: 100%;
+}
+
+#latent-inputs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0;
+    left: calc(1px + 50%);
+    box-sizing: border-box;
+    aspect-ratio: 1/1;
+    height: 100%;
+    transform: translateX(-50%);
+}
+
+.latent-input-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.latent-input-container input {
+    width: 100%;
+}
+
+@media(max-width: 840px) {
+
+    #container {
+        flex-direction: column;
+    }
+    
+    #latent {
+        width: auto;
+    }
+
+    #decoded {
+        width: auto;
+    }
+
+}
+
+
+/******************************************************************************
+ * ELEMENTS
+ ******************************************************************************
+ */
+
+
+canvas {
+    box-sizing: border-box;
+    border: 1px solid black;
+    image-rendering: crisp-edges;
+    aspect-ratio: 1/1;
+}
+
+button {
+    font: inherit;
+    padding: .4rem;
+    margin-right: .2rem;
+}
+
+.latent-input-container {
+    width: 25%;
+    aspect-ratio: 1/1;
+}
+
+.latent-input-container input {
+    height: 2px;
+    background: hsl(210, 77%, 77%);
+    visibility: hidden;
+}
+
+.latent-input-container:focus input,
+.latent-input-container:active input,
+.latent-input-container:hover input {
+    visibility: visible;
+}
+
+.latent-input-container input::-moz-range-progress {
+    height: 2px;
+    background: hsl(210, 59%, 38%);
+}
+
+.latent-input-container input::-moz-range-thumb {
+    height: 17px;
+    width: 17px;
+    background: hsl(210, 77%, 57%);
+    border: none;
+    border-radius: 50%;
+}

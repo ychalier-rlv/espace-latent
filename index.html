@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="utf8">
+
+    <head>
+        <meta charset="utf8">
+        <title>Espace Latent</title>
+        <script src="tf.min.js"></script>
+        <script src="master.js"></script>
+        <link rel="stylesheet" href="master.css">
+    </head>
+
+    <body>
+        <header>
+            
+            <!--
+            <p>
+                Pour être plus efficace, la machine se représente les données sous forme d'information compressée.
+                Ici, une image de 784 pixels (à droite) est représentée par seulement 16 nombres (à gauche).
+                <b>L'image de droite (28&times;28) est complètement recalculée à partir de l'image de gauche (4&times;4).</b>
+            </p>
+            -->
+            <!--
+            <p>
+                Cliquez sur un bouton ou passez le curseur sur l'image pour bouger les paramètres de l'espace latent.
+            </p>
+            -->
+            <div>
+                <span id="digit-buttons"></span>
+                <button id="button-animate">Animer</button>
+            </div>
+            <!--
+            <p>
+                Cette représentation dense de l'information est beaucoup plus facile à manipuler pour la machine.
+                Tout le superflu a été éliminé, ne reste plus que ce qui est pertinent pour réaliser la tâche confiée,
+                typiquement, reconnaître un chiffre manuscrit.
+            </p>
+            -->
+        </header>
+        <div id="container">
+            <div id="latent">
+                <b>Espace latent</b>
+                <div id="latent-wrapper">
+                    <canvas id="latent-canvas"></canvas>
+                    <div id="latent-inputs"></div>
+                </div>
+            </div>
+            <div id="decoded">
+                <b>Image reconstruite</b>
+                <div id="decoded-wrapper">
+                    <canvas id="decoded-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>
